@@ -16,7 +16,7 @@ def fetch_metadata(url):
         response = requests.get(api_url, params= params)
         response.raise_for_status()
         return response.json()
-    except:
+    except requests.exceptions.RequestException:
         return response_dict
 
 
